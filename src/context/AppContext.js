@@ -5,9 +5,6 @@ export const AppReducer = (state, action) => {
     let budget = 0;
     switch (action.type) {
         case 'ADD_EXPENSE':
-            console.log("I am here")
-            console.log(action.payload.name)
-            console.log(action.payload.cost)
             let total_budget = 0;
             total_budget = state.expenses.reduce(
                 (previousExp, currentExp) => {
@@ -28,7 +25,8 @@ export const AppReducer = (state, action) => {
                     ...state,
                 };
             } else {
-                alert("Cannot increase the allocation! Out of funds");
+                // alert("Cannot increase the allocation! Out of funds");
+                alert("The value can't exceed remaining funds " + state.currency + " " + state.remaining);
                 return {
                     ...state
                 }
@@ -90,6 +88,7 @@ const initialState = {
         { id: "IT", name: 'IT', cost: 500 },
     ],
     currency: '£',
+    remaining: 0,
 };
 
 // 2. Creates the context this is the thing our components import and use to get the state
@@ -100,14 +99,14 @@ export const AppContext = createContext();
 export const AppProvider = (props) => {
     // 4. Sets up the app state. takes a reducer, and an initial state
     const [state, dispatch] = useReducer(AppReducer, initialState);
-    let remaining = 0, totalExpenses = 0;
+    let totalExpenses = 0, remaining = state.remaining;
 
 
     if (state.expenses) {
             totalExpenses = state.expenses.reduce((total, item) => {
             return (total = total + item.cost);
         }, 0);
-        remaining = state.budget - totalExpenses;
+        state.remaining = state.budget - totalExpenses;
     }
 
     return (
@@ -116,7 +115,7 @@ export const AppProvider = (props) => {
                 expenses: state.expenses,
                 budget: state.budget,
                 totalExpenses: totalExpenses,
-                remaining: remaining,
+                remaining: state.remaining,
                 dispatch,
                 currency: state.currency
             }}
