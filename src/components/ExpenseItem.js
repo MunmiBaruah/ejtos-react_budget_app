@@ -45,8 +45,6 @@ const ExpenseItem = (props) => {
         <tr>
             <td>{props.name}</td>
             <td>{currency}{parseInt(props.cost)}</td>
-            {/*<td>{Currency}{parseInt(props.unitprice)}</td>*/}
-            {/*<td>{Currency}{parseInt(props.quantity)*parseInt(props.unitprice)}</td>*/}
             <td><FaPlusCircle size='2.2em' color="green" onClick={handleIncreaseByTen}></FaPlusCircle></td>
             <td><FaMinusCircle size='2.2em' color="red" onClick={handleDecreaseByTen}></FaMinusCircle></td>
             <td><FaTimesCircle size='1em' color="black" onClick={handleDeleteItem}></FaTimesCircle></td>

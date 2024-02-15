@@ -13,7 +13,7 @@ const Budget = () => {
     return (
         <div className='alert alert-primary'>
             <span>
-                Cart Value: {currency} <input
+                Budget: {currency} <input
                 required='required'
                 type='number'
                 min={1}
