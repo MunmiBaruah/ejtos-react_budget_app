@@ -34,13 +34,13 @@ const App = () => {
                                 <CurrencyList/>
                             </div>
                         </div>
-                        <h3 className='mt-3'>Shopping Cart</h3>
+                        <h3 className='mt-3'>Allocation</h3>
                         <div className='row '>
                             <div className='col-sm'>
                                 <ExpenseList />
                             </div>
                         </div>
-                        <h3 className='mt-3'>Allocation Form</h3>
+                        <h3 className='mt-3'>Change allocation</h3>
                         <div className='row '>
                             <div className='col-sm'>
                                 <AllocationForm/>
