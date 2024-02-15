@@ -10,8 +10,6 @@ const CurrencyList = () => {
             payload: val
         })
     }
-
-    // $ Dollar,£ Pound,€ Euro,₹ Ruppee
     return (
         <div className='alert alert-success'> Currency {
             <select style={{backgroundColor: "#d1e7dd", borderColor: "#d1e7dd"}} name="Location" id="Location" onChange={event=>changeCurrency(event.target.value)}>

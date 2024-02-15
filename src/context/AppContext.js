@@ -102,6 +102,7 @@ export const AppContext = createContext();
 export const AppProvider = (props) => {
     // 4. Sets up the app state. takes a reducer, and an initial state
     const [state, dispatch] = useReducer(AppReducer, initialState);
+
     let tempTotalExpenses = 0;
 
 
@@ -118,7 +119,9 @@ export const AppProvider = (props) => {
             value={{
                 expenses: state.expenses,
                 budget: state.budget,
+
                 totalExpenses: state.totalExpenses,
+
                 remaining: state.remaining,
                 dispatch,
                 currency: state.currency

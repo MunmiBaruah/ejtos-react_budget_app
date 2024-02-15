@@ -46,28 +46,6 @@ const App = () => {
                                 <AllocationForm/>
                             </div>
                         </div>
-
-
-                        {
-                            /* Add Remaining component here*/
-                        }
-
-                        {
-                            /* Add ExpenseTotal component here */
-                        }
-
-                        {
-                            /* Add CurrencyList component here */
-                        }
-
-                        {
-                            /* Add ExpenseItem component here */
-                        }
-
-                        {
-                            /* Add AllocationForm component here under */
-                        }
-
                 </div>
             </div>
         </AppProvider>
